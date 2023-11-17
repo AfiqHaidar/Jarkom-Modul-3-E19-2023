@@ -1,4 +1,4 @@
-# Jarkom-Modul-1-E19-2023
+# Jarkom-Modul-3-E19-2023
 Laporan Resmi Praktikum Modul 2 Kelompok E19
 | Nama               |  NRP       | 
 |--------------------|-------------|
