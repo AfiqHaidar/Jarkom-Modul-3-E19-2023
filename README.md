@@ -1,5 +1,5 @@
 # Jarkom-Modul-3-E19-2023
-Laporan Resmi Praktikum Modul 2 Kelompok E19
+Laporan Resmi Praktikum Modul 3 Kelompok E19
 | Nama               |  NRP       | 
 |--------------------|-------------|
 | M. Armand Giovani | 5025211054  |
