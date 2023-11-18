@@ -254,6 +254,8 @@ options {
 
 service bind9 restart
 ```
+## Testing
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/bf7bf07d-3c6b-4e1d-bc19-e9f9ae85c8a1)
 
 ---
 ## Soal 2
