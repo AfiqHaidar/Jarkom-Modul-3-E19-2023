@@ -361,7 +361,7 @@ service isc-dhcp-server restart
 ```sh
 
 echo '
-SERVERS="10.46.1.2"
+SERVERS="10.46.1.1"
 INTERFACES="eth1 eth2 eth3 eth4"
 OPTIONS=
 ' > /etc/default/isc-dhcp-relay
@@ -385,6 +385,9 @@ apt install apache2-utils -y
 apt-get install jq -y
 
 ```
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/09f8a656-7059-4256-a117-a0d95fe2f9f6)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/4dab7462-b1ee-4320-88fb-0d2921d03d4e)
 
 ---
 ## Soal 5
@@ -427,6 +430,9 @@ subnet 10.46.4.0 netmask 255.255.255.0 {
 service isc-dhcp-server restart
 
 ```
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/1710fa10-640c-4374-90c4-a42258d72cd4)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/35d551b7-b3db-4e84-b9e4-a1bc41c7b761)
 
 ---
 ## Soal 6
