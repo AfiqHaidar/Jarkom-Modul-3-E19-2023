@@ -195,9 +195,9 @@ zone "riegel.canyon.e19.com" {
     file "/etc/bind/m3/riegel.canyon.e19.com";
 };
 
-zone "riegel.canyon.e19.com" {
+zone "granz.canyon.e19.com" {
     type master;
-    file "/etc/bind/m3/riegel.canyon.e19.com";
+    file "/etc/bind/m3/granz.canyon.e19.com";
 };
 ' > /etc/bind/named.conf.local
 
