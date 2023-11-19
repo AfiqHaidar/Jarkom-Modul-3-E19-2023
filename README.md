@@ -521,6 +521,8 @@ lynx localhost
 
 ## Testing
 
+![6](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/8e6ba9ab-6738-4ded-9ff2-1a4530e7858b)
+
 ---
 ## Soal 7
 _Lakukan testing dengan 1000 request dan 100 request/second_
@@ -616,6 +618,9 @@ ab -n 1000 -c 100 http://www.granz.channel.e19.com/
 #atau
 ab -n 1000 -c 100 http://10.46.2.2:80/
 ```
+## Testing
+
+![7](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/273bfc89-c264-4ff6-ba7f-f2fd7c29e45c)
 
 ---
 ## Soal 8
@@ -680,6 +685,7 @@ ab -n 200 -c 10 http://10.46.2.2:80/
 
 ## Testing
 
+![8](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/4d0e10c9-9a3b-4796-8d42-5368a0957fc2)
 
 ---
 ## Soal 9
@@ -1195,7 +1201,7 @@ echo '{"username": "kelompoke19", "password": "passworde19"}' > login.json && ab
 ## Soal 19
 _Lakukan testing sebanyak 100 request dengan 10 request/second dengan menaikan pm.max_children, pm.start_servers,  pm.min_spare_servers, pm.max_spare_servers_
 
-```txt
+
 pm.max_children Menentukan jumlah maksimum pekerja PHP (proses anak) yang dapat berjalan secara bersamaan. Nilai ini sebaiknya disesuaikan dengan kapasitas sumber daya server. Jika terlalu rendah, server mungkin tidak dapat menangani banyak permintaan secara bersamaan, sementara jika terlalu tinggi, dapat menyebabkan kelebihan beban dan kekurangan sumber daya.
 
 pm.start_servers Menentukan jumlah pekerja PHP yang akan dimulai secara otomatis ketika PHP-FPM pertama kali dijalankan atau direstart. Ini membantu dalam mengoptimalkan performa pada saat server pertama kali dimulai.
@@ -1203,7 +1209,7 @@ pm.start_servers Menentukan jumlah pekerja PHP yang akan dimulai secara otomatis
 pm.min_spare_servers Menentukan jumlah minimum pekerja PHP yang tetap berjalan saat server berjalan. Ini membantu menjaga agar server tetap responsif terhadap permintaan bahkan saat lalu lintas rendah.
 
 pm.max_spare_servers Menentukan jumlah maksimum pekerja PHP yang dapat berjalan tetapi tidak menangani permintaan. Jumlah ini disesuaikan dengan kebutuhan untuk menangani lonjakan lalu lintas tanpa menambahkan terlalu banyak sumber daya ketika beban rendah
-```
+
 
 ### Laravel Worker
 
