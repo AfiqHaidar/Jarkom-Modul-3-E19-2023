@@ -254,6 +254,16 @@ options {
 
 service bind9 restart
 ```
+
+## Penjelasan 
+-   `zone "riegel.canyon.e19.com"` dan `zone "granz.canyon.e19.com"` digunakan untuk membuat domain baru dengan nama `riegel.canyon.e19.com` dan `granz.canyon.e19.com`
+-   `type master` digunakan untuk membuat domain baru dengan tipe master
+-   `file "/etc/bind/m3/riegel.canyon.e19.com"` dan `file "/etc/bind/m3/granz.canyon.e19.com"` digunakan untuk membuat domain baru dengan file konfigurasi `/etc/bind/m3/riegel.canyon.e19.com` dan `/etc/bind/m3/granz.canyon.e19.com`
+-   `mkdir -p /etc/bind/m3` digunakan untuk membuat direktori baru bernama `/etc/bind/m3`
+-  `cp /etc/bind/db.local /etc/bind/m3/riegel.canyon.e19.com` dan `cp /etc/bind/db.local /etc/bind/m3/granz.channel.e19.com` digunakan untuk mengcopy file konfigurasi `/etc/bind/db.local` ke `/etc/bind/m3/riegel.canyon.e19.com` dan `/etc/bind/m3/granz.channel.e19.com`
+-  options digunakan untuk mengatur opsi-opsi dari bind9 seperti `forwarders` digunakan untuk mengatur DNS server yang akan digunakan untuk melakukan query
+-  `allow-query{any;};` digunakan untuk mengatur siapa saja yang dapat melakukan query
+
 ## Testing
 ![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/bf7bf07d-3c6b-4e1d-bc19-e9f9ae85c8a1)
 
@@ -356,6 +366,8 @@ service isc-dhcp-server restart
 
 ```
 
+## Penjelasan 
+-   `option domain-name-servers 10.46.1.2;` digunakan untuk mengatur DNS server yang akan digunakan oleh client yaitu `heiter` dengan IP `10.46.1.2`
 ### Aura
 
 ```sh
@@ -430,6 +442,12 @@ subnet 10.46.4.0 netmask 255.255.255.0 {
 service isc-dhcp-server restart
 
 ```
+
+## Penjelasan
+-   `default-lease-time 180` & `default-lease-time 180` merupakan waktu peminjaman alamat IP yang dialokasikan untuk client yang melalui Switch3 dan Switch4
+-   `max-lease-time 5760` merupakan waktu maksimal peminjaman alamat IP yang dialokasikan untuk client yang melalui Switch3 dan Switch4
+
+
 ![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/1710fa10-640c-4374-90c4-a42258d72cd4)
 
 ![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/35d551b7-b3db-4e84-b9e4-a1bc41c7b761)
@@ -490,6 +508,18 @@ service php7.3-fpm start
 lynx localhost
 
 ```
+## Penjelasan
+-   `apt-get install php7.3-fpm php7.3-common php7.3-mysql` digunakan untuk menginstall php7.3
+-   `wget --no-check-certificate -O '/var/www/granz.channel.e19.com' 'https://drive.google.com/u/0/uc?id=1ViSkRq7SmwZgdK64eRbr5Fm1EGCTPrU1&export=download'` digunakan untuk mendownload file zip dari link yang diberikan
+-   `unzip -o /var/www/granz.channel.e19.com -d /var/www/` digunakan untuk mengunzip file zip yang telah didownload
+-   `rm /var/www/granz.channel.e19.com` digunakan untuk menghapus file zip yang telah didownload
+-   `mv /var/www/modul-3 /var/www/granz.channel.e19.com` digunakan untuk mengubah nama folder modul-3 menjadi granz.channel.e19.com
+-   `cp /etc/nginx/sites-available/default /etc/nginx/sites-available/granz.channel.e19.com` digunakan untuk mengcopy file konfigurasi `/etc/nginx/sites-available/default` ke `/etc/nginx/sites-available/granz.channel.e19.com`
+-   `ln -s /etc/nginx/sites-available/granz.channel.e19.com /etc/nginx/sites-enabled/` digunakan untuk membuat symlink dari `/etc/nginx/sites-available/granz.channel.e19.com` ke `/etc/nginx/sites-enabled/`
+-   `rm /etc/nginx/sites-enabled/default` digunakan untuk menghapus symlink dari `/etc/nginx/sites-enabled/default`
+-   `fastcgi_pass unix:/run/php/php7.3-fpm.sock;` digunakan untuk mengatur fastcgi_pass ke unix:/run/php/php7.3-fpm.sock
+
+## Testing
 
 ---
 ## Soal 7
@@ -530,6 +560,9 @@ $TTL    604800
 www     IN      CNAME   granz.channel.e19.com.
 ' > /etc/bind/m3/granz.channel.e19.com
 ```
+
+## Penjelasan 
+-   `10.46.2.2` Ip load balancer Eissen 
 
 ### Eisen
 
@@ -572,6 +605,9 @@ server {
 service nginx restart
 
 ```
+## Penjelasan
+-  `upstream worker` digunakan untuk membuat upstream worker dengan nama worker
+- Konfigurasi nginx untuk load balancer
 
 ### Client
 
@@ -622,11 +658,18 @@ upstream worker {
 
 ```
 
+-  `least_conn` digunakan untuk mengatur algoritma load balancing menjadi least connection
+-  `ip_hash` digunakan untuk mengatur algoritma load balancing menjadi ip hash
+-  `hash $request_uri consistent` digunakan untuk mengatur algoritma load balancing menjadi generic hash
+
+
 ### PHP Worker
 
 ```sh
 htop
 ```
+
+- `htop` digunakan untuk melihat proses php-fpm
 
 ### Client
 ```sh
@@ -634,6 +677,9 @@ ab -n 200 -c 10 http://www.granz.channel.e19.com/
 #atau
 ab -n 200 -c 10 http://10.46.2.2:80/
 ```
+
+## Testing
+
 
 ---
 ## Soal 9
@@ -662,6 +708,9 @@ upstream worker {
 }
 
 ```
+-   `server 3 worker` digunakan untuk mengatur jumlah worker menjadi 3 worker
+-   `server 2 worker` digunakan untuk mengatur jumlah worker menjadi 2 worker
+-   `server 1 worker` digunakan untuk mengatur jumlah worker menjadi 1 worker
 
 ### PHP Worker
 
@@ -669,12 +718,17 @@ upstream worker {
 htop
 ```
 
+-   `htop` digunakan untuk melihat proses php-fpm
+
 ### Client
 ```sh
 ab -n 200 -c 10 http://www.granz.channel.e19.com/
 #atau
 ab -n 200 -c 10 http://10.46.2.2:80/
 ```
+
+## Testing
+
 
 ---
 ## Soal 10
@@ -721,6 +775,16 @@ server {
 service nginx restart
 
 ```
+-  `mkdir /etc/nginx/rahasisakita` digunakan untuk membuat direktori baru bernama `/etc/nginx/rahasisakita`
+-   `auth_basic "Administrators Area";` digunakan untuk mengatur pesan yang akan ditampilkan saat melakukan autentikasi
+-   `auth_basic_user_file /etc/nginx/rahasisakita/.htpasswd;` digunakan untuk mengatur lokasi file `.htpasswd` yang digunakan untuk autentikasi
+
+### Client
+```sh
+lynx www.granz.channel.e19.com
+```
+
+## Testing
 
 ---
 ## Soal 11
@@ -772,6 +836,11 @@ server {
 service nginx restart
 
 ```
+-  `location ~ /its` digunakan untuk mengatur proxy pass ke `https://www.its.ac.id` jika request mengandung `/its`
+-   `proxy_set_header Host www.its.ac.id;` digunakan untuk mengatur header host menjadi `www.its.ac.id`
+-   `proxy_set_header X-Real-IP $remote_addr;` digunakan untuk mengatur header X-Real-IP menjadi `$remote_addr`
+-   `proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;` digunakan untuk mengatur header X-Forwarded-For menjadi `$proxy_add_x_forwarded_for`
+-   `proxy_set_header X-Forwarded-Proto $scheme;` digunakan untuk mengatur header X-Forwarded-Proto menjadi `$scheme`
 
 ### Client
 ```sh
@@ -779,6 +848,8 @@ lynx www.granz.channel.e19.com/its
 #atau
 lynx 10.46.2.2:80/its
 ```
+
+## Testing
 
 ---
 ## Soal 12
@@ -836,6 +907,7 @@ server {
 service nginx restart
 
 ```
+Disini kami hanya mengizinkan beberapa IP saja sesuai dengan ketentual soal dan kamu menolak seluruh IP selain yang telah ditentukan soal. Untuk melakukan testingnya. Bisa dilakukan dengan membuka client yang mendapatkan IP 10.46.3.69, 10.46.3.70, 10.46.4.167, dan 10.46.4.168. 
 
 ---
 ## Soal 13
@@ -882,11 +954,11 @@ GRANT ALL PRIVILEGES ON *.* TO 'kelompoke19'@'localhost';
 FLUSH PRIVILEGES;
 
 ```
+-   setup mariadb server dengan `apt-get install mariadb-server -y` jangan lupa ganti bind-address menjadi 0.0.0.0
 
 ### Laravel Worker
 
-```
-
+```sh
 apt-get update
 apt-get install lynx -y
 apt-get install mariadb-client -y
@@ -894,6 +966,9 @@ apt-get install mariadb-client -y
 mariadb --host=10.46.2.1 --port=3306 --user=kelompoke19 --password=passworde19 -e "SHOW DATABASES;"
 
 ```
+-  `mariadb --host=host=10.46.2.1 --port=3306 --user=kelompoke19 --password=passworde19 -e "SHOW DATABASES;"` digunakan untuk mengecek apakah koneksi ke database berhasil atau tidak
+
+## Testing
 
 ---
 ## Soal 14
@@ -1028,6 +1103,14 @@ service php8.0-fpm restart
 lynx localhost:8001  # Sesuaikan dengan worker, 8001 -> Frieren | 8002 -> Flamme | 8003 -> Fern;
 
 ```
+-   Lakukan install composer dan php8.0 dengan `apt-get install composer php8.0-mbstring php8.0-xml php8.0-cli php8.0-common php8.0-intl php8.0-opcache php8.0-readline php8.0-mysql php8.0-fpm php8.0-curl unzip wget -y`
+-   Lakukan install git dengan `apt-get install git -y` dan clone repository dengan `cd /var/www && git clone
+-   Lakukan install laravel dengan `cd /var/www/laravel-praktikum-jarkom && composer update`
+-   lakukan konfigurasi pada masing-masing worker dengan `cd /var/www/laravel-praktikum-jarkom && cp .env.example .env`
+-   Setelah berhasil menjalankan semuanya dan tidak mendapatkan error. Sekarang lakukan konfigurasi nginx sebagai berikut pada masing-masing worker dimana port nya adalah sebagai berikut `8001 -> Frieren | 8002 -> Flamme | 8003 -> Fern;`
+-   Setelah itu lakukan restart nginx dan php8.0-fpm dengan `service nginx restart` dan `service php8.0-fpm restart`
+
+## Testing
 
 ---
 ## Soal 15
@@ -1037,6 +1120,7 @@ _Testing sebanyak 100 request dengan 10 request/second. POST /auth/register_
 ```sh
 echo '{"username": "kelompoke19", "password": "passworde19"}' > register.json && ab -n 100 -c 10 -p register.json -T application/json http://10.46.4.1:8001/api/auth/register
 ```
+-   lakukan testing dengan `ab -n 100 -c 10 -p register.json -T application/json http://10.46.4.1:8001/api/auth/register`
 
 ---
 ## Soal 16
@@ -1046,6 +1130,7 @@ _Testing sebanyak 100 request dengan 10 request/second. POST /auth/login_
 ```sh
 echo '{"username": "kelompoke19", "password": "passworde19"}' > login.json && ab -n 100 -c 10 -p login.json -T application/json http://10.46.4.1:8001/api/auth/login
 ```
+-   lakukan testing dengan `ab -n 100 -c 10 -p login.json -T application/json http://10.46.4.2:8002/api/auth/login`
 
 ---
 ## Soal 17
@@ -1060,6 +1145,8 @@ token=$(cat login_output.txt | jq -r '.token')
 ab -n 100 -c 10 -H "Authorization: Bearer $token" http://10.46.4.1:8001/api/me
 
 ```
+-   `curl -X POST -H "Content-Type: application/json" -d @login.json http://10.46.4.1:8001/api/auth/login > login_output.txt` digunakan untuk melakukan login dan menyimpan outputnya ke `login_output.txt`
+-   `token=$(cat login_output.txt | jq -r '.token')` digunakan untuk mengambil token dari `login_output.txt`
 
 ---
 ## Soal 18
@@ -1094,6 +1181,9 @@ service nginx restart
 
 ```
 
+## Note
+-   Hati-hati port tabrakan dengan load balancer dari php worker
+
 ### Client
 ```sh
 
@@ -1104,6 +1194,16 @@ echo '{"username": "kelompoke19", "password": "passworde19"}' > login.json && ab
 ---
 ## Soal 19
 _Lakukan testing sebanyak 100 request dengan 10 request/second dengan menaikan pm.max_children, pm.start_servers,  pm.min_spare_servers, pm.max_spare_servers_
+
+```txt
+pm.max_children Menentukan jumlah maksimum pekerja PHP (proses anak) yang dapat berjalan secara bersamaan. Nilai ini sebaiknya disesuaikan dengan kapasitas sumber daya server. Jika terlalu rendah, server mungkin tidak dapat menangani banyak permintaan secara bersamaan, sementara jika terlalu tinggi, dapat menyebabkan kelebihan beban dan kekurangan sumber daya.
+
+pm.start_servers Menentukan jumlah pekerja PHP yang akan dimulai secara otomatis ketika PHP-FPM pertama kali dijalankan atau direstart. Ini membantu dalam mengoptimalkan performa pada saat server pertama kali dimulai.
+
+pm.min_spare_servers Menentukan jumlah minimum pekerja PHP yang tetap berjalan saat server berjalan. Ini membantu menjaga agar server tetap responsif terhadap permintaan bahkan saat lalu lintas rendah.
+
+pm.max_spare_servers Menentukan jumlah maksimum pekerja PHP yang dapat berjalan tetapi tidak menangani permintaan. Jumlah ini disesuaikan dengan kebutuhan untuk menangani lonjakan lalu lintas tanpa menambahkan terlalu banyak sumber daya ketika beban rendah
+```
 
 ### Laravel Worker
 
