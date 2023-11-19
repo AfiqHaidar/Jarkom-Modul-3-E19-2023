@@ -7,6 +7,8 @@ Laporan Resmi Praktikum Modul 3 Kelompok E19
 
 ## Initial Config
 
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/21950933-a607-4479-8463-cfddac6f4b55)
+
 ### Aura
 
 ```sh
@@ -15,7 +17,7 @@ auto eth0
 iface eth0 inet dhcp
 up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.46.0.0/16
 
-auto eth1s
+auto eth1
 iface eth1 inet static
 	address 10.46.4.0
 	netmask 255.255.255.0
