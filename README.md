@@ -5,6 +5,10 @@ Laporan Resmi Praktikum Modul 3 Kelompok E19
 | M. Armand Giovani | 5025211054  |
 | Afiq Fawwaz Haidar | 5025211246  |
 
+## Link Grimoire
+
+https://docs.google.com/document/d/1i5b5GL8LXc_h71Uv4_Qp682wmWis0SpB5pHmxt3zqpw/edit?usp=sharing
+
 ## Initial Config
 
 ![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/21950933-a607-4479-8463-cfddac6f4b55)
@@ -792,6 +796,13 @@ service nginx restart
 lynx www.granz.channel.e19.com
 ```
 
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/d7166e93-98a9-4f32-81a5-fd0d9a5db76c)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/92cf2bca-79ab-4506-be76-544a470dd5c9)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/1d55671f-1036-48b4-9f3b-91a395eb566d)
+
+
 ## Testing
 
 ---
@@ -857,6 +868,9 @@ lynx www.granz.channel.e19.com/its
 lynx 10.46.2.2:80/its
 ```
 
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/73dab35c-5064-4906-aec3-997d7d995a45)
+
+
 ## Testing
 
 ---
@@ -916,6 +930,12 @@ service nginx restart
 
 ```
 Disini kami hanya mengizinkan beberapa IP saja sesuai dengan ketentual soal dan kamu menolak seluruh IP selain yang telah ditentukan soal. Untuk melakukan testingnya. Bisa dilakukan dengan membuka client yang mendapatkan IP 10.46.3.69, 10.46.3.70, 10.46.4.167, dan 10.46.4.168. 
+
+Client dengan IP selain diatas.
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/b2c977e7-f5d5-4280-a74b-f9b7e8c3ccdf)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/8c426787-6465-4cb1-9be8-1ba05601ec2c)
 
 ---
 ## Soal 13
@@ -977,6 +997,9 @@ mariadb --host=10.46.2.1 --port=3306 --user=kelompoke19 --password=passworde19 -
 -  `mariadb --host=host=10.46.2.1 --port=3306 --user=kelompoke19 --password=passworde19 -e "SHOW DATABASES;"` digunakan untuk mengecek apakah koneksi ke database berhasil atau tidak
 
 ## Testing
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/d4105bb3-4832-46ab-a9ae-b73f1f8396ae)
+
 
 ---
 ## Soal 14
@@ -1119,6 +1142,9 @@ lynx localhost:8001  # Sesuaikan dengan worker, 8001 -> Frieren | 8002 -> Flamme
 -   Setelah itu lakukan restart nginx dan php8.0-fpm dengan `service nginx restart` dan `service php8.0-fpm restart`
 
 ## Testing
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/70834506/5dca6e4e-4dad-491c-83f2-3ddff07e91c4)
+
 
 ---
 ## Soal 15
