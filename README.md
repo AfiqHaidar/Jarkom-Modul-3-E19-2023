@@ -299,6 +299,9 @@ subnet 10.46.3.0 netmask 255.255.255.0 {
 service isc-dhcp-server restart
 
 ```
+## Testing
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/8f9fded9-b0bf-4095-b548-a0d5975309f3)
 
 ---
 ## Soal 3
@@ -333,6 +336,9 @@ subnet 10.46.4.0 netmask 255.255.255.0 {
 service isc-dhcp-server restart
 
 ```
+## Testing
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/6c647a6f-fd1f-4798-9194-b8124ab3eae7)
 
 ---
 ## Soal 4
@@ -691,7 +697,15 @@ ab -n 200 -c 10 http://10.46.2.2:80/
 
 ## Testing
 
-![8](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/4d0e10c9-9a3b-4796-8d42-5368a0957fc2)
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/4034e7f2-6240-4359-add8-65cc353ef326)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/6c2e5871-0ee1-4071-9478-06a576a5fca1)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/5bc96d48-79d5-4e94-9e5b-b461b0a23297)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/82e80320-9348-436c-a81b-66b2f0e21b12)
+
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/e2666473-c046-4077-bde2-e36f96ee2cc8)
 
 ---
 ## Soal 9
@@ -740,7 +754,15 @@ ab -n 200 -c 10 http://10.46.2.2:80/
 ```
 
 ## Testing
+- 3 Worker <br></br>
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/8e1dfeb2-6ff8-4d2c-884d-c529e78849d2)
 
+- 2 Worker <br></br>
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/3b1c6c3e-99b9-4a76-aa40-fba3f600df6a)
+
+- 1 Worker <br></br>
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/b91687bc-e965-46c2-a4a3-94b83ecda00b)
+![image](https://github.com/AfiqHaidar/Jarkom-Modul-3-E19-2023/assets/100523471/d707004c-7f7a-4aa7-9dba-cd3a8b879e0b)
 
 ---
 ## Soal 10
